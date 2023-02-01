@@ -42,7 +42,7 @@ const Home = () => {
     }, []);
 
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-900 min-h-screen h-auto">
       <Navbar />
       <div className="md:mx-28 mx-10">
         <h1 className="text-3xl text-center font-bold text-white mt-6">

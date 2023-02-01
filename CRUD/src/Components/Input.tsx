@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ITasks } from "./Interface";
 import uuid from "react-uuid";
 import { db } from "../firebase";
-import {collection, query, onSnapshot, addDoc} from "firebase/firestore";
+import {collection, addDoc} from "firebase/firestore";
+import { toast } from "react-toastify";
 
 const Input = () => {
   const [title, setTitle] = useState<string>("");
@@ -16,6 +17,7 @@ const Input = () => {
     setTasks([...tasks, newTask]);
     try{
         addDoc(collection(db, "todos"), newTask);
+        toast.success("Task added successfully");
 
     } catch (err) {
         console.log(err);
@@ -43,8 +45,8 @@ const Input = () => {
     setTitle("");
     setDescription("");
     setDueDate("");
+    
     };
-
 
   console.log(title, description, dueDate);
   return (
@@ -62,6 +64,7 @@ const Input = () => {
             className="input input-bordered bg-gray-700 mt-2 text-gray-200 w-[300px] md:w-[600px] mx-auto"
             value={title}
             onChange={handleChange}
+            required = {true}
           />
         </div>
 
@@ -72,6 +75,7 @@ const Input = () => {
             onChange={handleChangeDescription}
             value={description}
             placeholder="Task Description"
+            required= {true}
           ></textarea>
         </div>
 
@@ -82,6 +86,7 @@ const Input = () => {
             className="input input-bordered w-[300px] bg-gray-700 mt-2 text-gray-200 md:w-[600px] mx-auto"
             onChange={handleDueChange}
             value={dueDate}
+            required = {true}
           />
         </div>
 

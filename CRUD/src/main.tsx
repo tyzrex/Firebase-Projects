@@ -4,7 +4,6 @@ import App from './App'
 import './index.scss'
 import Addtask from './Components/Addtask'
 import { BrowserRouter, RouterProvider, createBrowserRouter } from 'react-router-dom'
-
 const router = createBrowserRouter(
   [
     {
