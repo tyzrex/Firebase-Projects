@@ -2,6 +2,12 @@
 
 This is a simple Todo application built using React, Typescript, Vite, Firebase, Tailwind CSS, and Daisy UI for styling.
 
+## Preview:
+
+![1675248261509](image/README/1675248261509.png)
+
+![1675248280595](image/README/1675248280595.png)
+
 ## Setup
 
 Here are the steps to setup the project:
